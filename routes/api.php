@@ -25,7 +25,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::ApiResource('categories' , CategoryController::class);
 Route::apiResource('products', ProductController::class);
 Route::get('products/category/{categoryId}', [ProductController::class, 'getByCategory']);
-Route::patch('products/{id}', [ProductController::class, 'update']);
+Route::put('/payments/{id}', [PaymentController::class, 'update']);
 Route::apiResource('orders', OrderController::class);
 Route::apiResource('payments', PaymentController::class);
 Route::get('/payments/{id}', [PaymentController::class, 'show']);
+Route::put('/orders/{id}', [OrderController::class, 'update']);
+Route::get('/orders/{id}', [OrderController::class, 'show']);
+Route::put('/products/{id}', [ProductController::class, 'update']);

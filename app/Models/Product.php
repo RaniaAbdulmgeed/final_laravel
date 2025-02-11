@@ -36,7 +36,8 @@ class Product extends Model
      */
     protected $casts = [
         'size_options' => 'array',
-        'color_options' => 'array'
+        'color_options' => 'array',
+        'image_url' => 'string' // ✅ Ensure image_url is treated as a string
     ];
 
     /**

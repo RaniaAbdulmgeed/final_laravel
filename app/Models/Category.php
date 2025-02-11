@@ -18,11 +18,8 @@ class Category extends Model
     /**
      * Mass assignable attributes (columns).
      */
-    protected $fillable = [
-        'name',
-        'description',
-        'state'
-    ];
+    protected $fillable = ['name', 'description', 'state'];
+
 
     /**
      * Attributes that should be mutated to dates (for soft deletes).
