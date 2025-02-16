@@ -26,9 +26,8 @@ class ProductResource extends JsonResource
             'Color_Options' => $this->color_options,
             'Image_URL' => $this->image_url,
             'Product_State' => $this->state,
-            'Created_At' => $this->created_at,
-            'Updated_At' => $this->updated_at,
+            'Created_At' => $this->created_at->toDateTimeString(),  // Formatting timestamp
+            'Updated_At' => $this->updated_at->toDateTimeString(),
         ];
-        return parent::toArray($request);
     }
 }

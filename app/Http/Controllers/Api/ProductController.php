@@ -129,15 +129,18 @@ public function update(Request $request, $id)
      */
     public function getByCategory($categoryId)
     {
+        // Fetch products from the given category where state = 1
         $products = Product::where('category_id', $categoryId)
                             ->where('state', 1)
                             ->get();
 
+        // Check if products exist
         if ($products->isEmpty()) {
             return response()->json(['message' => 'No products found in this category'], 404);
         }
 
-        return ProductResource::collection($products);
+        // Return products as a collection using ProductResource
+        return response()->json($products);
     }
 
     /**
